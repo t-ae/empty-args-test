@@ -1,7 +1,4 @@
-import SPMOpenCV
+import AppC
 
 print("CommandLine.arguments:", CommandLine.arguments)
-
-guard !CommandLine.arguments.isEmpty else {
-    fatalError("CommandLine.arguments is empty.")
-}
+precondition(!CommandLine.arguments.isEmpty, "CommandLine.arguments is empty.")

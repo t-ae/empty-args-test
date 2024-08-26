@@ -1,15 +1,18 @@
 // swift-tools-version: 5.10
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "empty-args-test",
     targets: [
-        .systemLibrary(
-            name: "SPMOpenCV",
-            pkgConfig: "opencv4"
+        .target(
+            name: "AppC"
         ),
-        .executableTarget(name: "App", dependencies: ["SPMOpenCV"]),
+        .executableTarget(
+            name: "App",
+            dependencies: [
+                "AppC",
+            ]
+        ),
     ]
 )
